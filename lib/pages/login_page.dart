@@ -1,3 +1,4 @@
+import "package:dinoapp/utility/route.dart";
 import "package:flutter/material.dart";
 
 class Loginpage extends StatelessWidget {
@@ -7,7 +8,8 @@ class Loginpage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Material(
         color: Colors.white,
-        child: Column(
+        child: SingleChildScrollView(
+            child: Column(
           children: [
             Image.asset("assets/images/login_image.png", fit: BoxFit.cover),
             SizedBox(
@@ -38,18 +40,20 @@ class Loginpage extends StatelessWidget {
                     ),
                     obscureText: true,
                   ),
-                  SizedBox(height: 30, ),
+                  SizedBox(
+                    height: 30,
+                  ),
                   ElevatedButton(
                     child: Text("Login"),
-                    style: TextButton.styleFrom(),
+                    style: TextButton.styleFrom(minimumSize: Size(140, 40)),
                     onPressed: () {
-                      print("Button pressed");
+                      Navigator.pushNamed(context, MyRoutes.homeroute);
                     },
                   )
                 ],
               ),
             ),
           ],
-        ));
+        )));
   }
 }
