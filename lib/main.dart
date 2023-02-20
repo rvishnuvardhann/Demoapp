@@ -1,3 +1,4 @@
+import 'package:dinoapp/utility/route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'pages/home_page.dart';
@@ -16,14 +17,15 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       // home:Homepage(),
       themeMode: ThemeMode.light,
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
           primarySwatch: Colors.indigo,
           fontFamily: GoogleFonts.lato().fontFamily),
       //initialRoute: "/home",
       routes: {
         "/": (context) => Loginpage(),
-        "/home": (context) => Homepage(),
-        "/login": (context) => Loginpage()
+        MyRoutes.homeroute: (context) => Homepage(),
+        MyRoutes.loginroute: (context) => Loginpage()
       },
     );
   }
