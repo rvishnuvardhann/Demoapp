@@ -1,4 +1,5 @@
 import 'package:dinoapp/utility/route.dart';
+import 'package:dinoapp/widgets/themes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'pages/home_page.dart';
@@ -15,12 +16,10 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      // home:Homepage(),
       themeMode: ThemeMode.light,
+      theme: MyTheme.lightTheme(context),
+      darkTheme: MyTheme.darkTheme(context),
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-          primarySwatch: Colors.deepPurple,
-          fontFamily: GoogleFonts.lato().fontFamily),
       initialRoute: MyRoutes.homeroute,
       routes: {
         "/": (context) => Loginpage(),
